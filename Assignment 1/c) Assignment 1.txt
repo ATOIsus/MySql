@@ -1,0 +1,159 @@
+
+
+
+
+CREATE DATABSE Lab;
+
+
+
+USE lab;
+
+
+
+CREATE TABLE tbl_students(
+
+roll_no int primary key,
+
+fname varchar(50),
+
+lname varchar(50),
+
+phone varchar(50),
+
+address varchar(50),
+
+age int,
+
+entry_fee int
+
+);
+
+
+
+
+
+INSERT INTO tbl_students VALUES (1, 'Charlie', 'William', '123456789', 'Ktm', 22, 2000);
+
+INSERT INTO tbl_students VALUES (2, 'Harry', 'Mason', '123', 'Pokhara', 21, 3000);
+
+INSERT INTO tbl_students VALUES (3, 'Jack', 'Liam', '213', 'Lalitpur', 35, 6000);
+
+INSERT INTO tbl_students VALUES (4, 'Jacob', 'Jacob', 'Bhanktapur', 'Ktm', 22, 9000);
+
+INSERT INTO tbl_students VALUES (5, 'James', 'Bond', '1', 'New York', 25, 12000);
+
+
+
+
+
+
+
+# Exercise 1
+
+
+
+
+# 1) Examin the table you have created . You do this using
+
+# desc<table_name> 
+
+desc tbl_students;
+
+
+
+# 2) View above created table using select query
+
+# - To see all columns:
+
+# Select * from table_name
+
+Select * FROM tbl_students;
+
+
+
+
+
+# 3) Select roll_no,fname,lname of student from above table
+
+# To select desired columns:
+
+# Select roll_no,fname,lname from tbl_students
+
+ Select  roll_no,fname,lname from tbl_students;
+
+ 
+
+ 
+
+ 
+
+ # 4) Find fname and age of student
+
+SELECT fname,age FROM tbl_students;
+
+
+
+
+# 5) Find the entry fee paid by every student along with their fname.
+
+SELECT fname, entry_fee FROM tbl_students;
+
+
+
+
+# 6) Show the fname and lname of student as full name in a single column
+
+SELECT fname, lname, CONCAT(fname,' ', lname)  AS Full_Name FROM tbl_students;
+
+
+
+
+
+
+
+# Exercise 2:
+
+
+
+# 1) Count the total number of student in tbl_student
+
+# Select count(roll_no) from tbl_student
+
+
+
+SELECT count(roll_no) FROM tbl_students;
+
+
+
+
+
+# 2) Find maximum age of student
+
+
+
+SELECT max(age) FROM tbl_students;
+
+
+
+# 3) Find minimum age of student
+
+
+
+SELECT min(age) FROM tbl_students;
+
+
+
+# 4) Find avg age of student
+
+
+
+SELECT avg(age) FROM tbl_students;
+
+
+
+# 5) Find the total entry fee paid students
+
+
+
+SELECT sum(entry_fee) FROM tbl_students;
+

@@ -1,0 +1,37 @@
+
+
+
+1) Update table
+
+
+Syntax: UPDATE <table_name> SET <column_name> = <value>  WHERE <primary_key/column_name> = <value>;
+
+
+UPDATE studenttable SET studentname = 'arar'  WHERE studentID = 2;
+
+UPDATE studenttable SET studentname = 'arar';                 // Every studentname is set to arar.
+
+
+
+
+
+
+2) Delete data
+
+
+Syntax: DELETE FROM <table_name> WHERE <column_name> = <value>;
+
+
+DELETE FROM studenttable;       // Deletes all data from the table, but table is not deleted.
+
+DELETE FROM studenttable WHERE studentName = 'Someone';
+
+
+
+3) TO DROP TABLE
+
+Syntax:  DROP TABLE <table_name>
+
+Example: DROP TABLE tbl_student;
+
+

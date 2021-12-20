@@ -1,0 +1,65 @@
+
+
+
+Syntax: CREATE DATABASE <Database_name>;     To create database.
+
+
+
+USE Database_name;                           To select the database to perform task on it.
+
+SHOW TABLES;   				     To show all tables in the databse.
+
+
+1) To create table.
+
+/*
+CREATE TABLE Batch30A(
+	id int primary key,
+	name varchar(30),
+	address varchar(30),
+	phone int,
+	DOB date
+
+)
+*/
+
+
+
+
+
+2) To insert data.
+
+/* INSERT INTO <Table> VALUES (<value1>, <value2>, <value3>);
+
+
+INSERT INTO Batch30A values (3, 'james1', 'toto', 123 , '2023-12-18');
+
+*/
+
+
+
+
+
+
+
+3) To select data from the table.
+/*
+
+
+SELECT * FROM <Table>
+
+
+
+# Select specified data from the table.
+
+
+Syntax: SELECT * FROM <table_name> WHERE <column_name> = <value>;
+
+
+
+SELECT * FROM studenttable WHERE studentName = 'Khoi';
+
+
+
+
+*/

@@ -1,0 +1,41 @@
+
+
+
+
+CREATE TABLE Category_Table(
+
+    CategoryID INT PRIMARY KEY AUTO_INCREMENT,
+
+    CategoryName VARCHAR(50) NOT NULL
+
+);
+
+
+
+
+
+CREATE TABLE Product_Table(
+
+    
+
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(50) NOT NULL,
+    CategoryID INT, 
+    FOREIGN KEY (CategoryID) REFERENCES Category_Table(CategoryID),
+    rate INT,
+    stockquantity INT,
+    color VARCHAR(10) ,
+    SellingType VARCHAR(10) DEFAULT 'Regular',
+    SKU VARCHAR(20), 
+
+
+
+    CONSTRAINT CHK_stock CHECK (stockquantity > 10),
+    CONSTRAINT CHK_color CHECK (color = 'Red' OR color = 'Green'  OR color = 'Blue'),
+    CONSTRAINT Uc_SKU    UNIQUE(SKU)
+
+);
+
+
+
+

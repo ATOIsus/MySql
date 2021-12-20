@@ -1,0 +1,54 @@
+
+
+
+MYSQL Constraints
+
+
+
+
+CONSTRAINT <constraint_name> <constaint_type> (<column_name>);
+
+
+
+1) Not Null:
+
+CREATE TABLE <TABLENAME>(
+<COLUMNNAME> <DATATYPE> [NOT NULL],…..
+<COLUMNNAME> <DATATYPE> [NOT NULL],…..
+)
+
+
+
+
+2) Foreign Key
+
+
+FOREIGN KEY [foreign_key_name] (column_name, ...)
+REFERENCES parent_table(colunm_name,...)
+
+Eg: CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+
+
+
+3) Unique
+
+CONSTRAINT <constraintname> UNIQUE (<columns>)
+
+Eg: CONSTRAINT UC_Person UNIQUE (email)
+
+
+
+4) Check
+
+CONSTRAINT <constraintname> CHECK (<expression>)
+
+Eg: CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+
+
+
+
+5) Default
+
+<columnname> <datatype> DEFAULT <default value>
+
+Eg: OrderDate date DEFAULT CURRENT_DATE()
