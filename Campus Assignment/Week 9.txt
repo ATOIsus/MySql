@@ -1,0 +1,52 @@
+
+USE classicmodels;
+
+
+
+
+
+
+
+
+
+
+
+# 1. Retrieve the details of customers in the payment records.
+
+SELECT Customers.customerNumber, Customers.customerName, payments.paymentDate, payments.amount
+
+FROM payments
+
+INNER JOIN Customers ON Customers.customerNumber = payments.customerNumber;
+
+
+
+
+
+# 2. Retrieve the office details along with the details of employees.
+
+SELECT * FROM offices INNER JOIN employees ON offices.officeCode = employees.officeCode;
+
+
+
+
+
+# 3. Join the tables productlines and products using left join
+
+SELECT * FROM products LEFT JOIN productlines ON products.productLine = productlines.productLine;
+
+
+
+
+
+
+
+# 4. Join order, ordedetails, customers and payments in a single query.
+
+SELECT * FROM
+
+orderdetails INNER JOIN orders ON orderdetails.orderNumber = orders.orderNumber
+
+INNER JOIN customers ON orders.customerNumber = customers.customerNumber
+
+INNER JOIN payments ON customers.customerNumber = payments.customerNumber;

@@ -1,0 +1,117 @@
+
+USE `classicmodels`;
+
+
+
+
+
+SHOW TABLES    ;
+
+
+
+
+
+
+
+
+
+# 1) List out all customers living in coutry France
+
+
+
+SELECT * FROM customers WHERE country = 'France';
+
+
+
+# 2) List out all customers living in coutry France and having creditlimit below 100000
+
+
+
+SELECT * FROM customers WHERE country = 'France' and creditlimit < 100000;
+
+
+
+# 3) Select customers name and phonenumber and order it by customername
+
+
+
+SELECT customerName , phone FROM customers ORDER BY customerName;
+
+
+
+# 4) List out the customers who do not have state value specified.
+
+
+
+SELECT * FROM customers WHERE state IS NULL;
+
+
+
+# 5) Count the number of customers in each country.
+
+
+
+SELECT country, COUNT(customerNumber)
+
+FROM customers
+
+GROUP BY country;
+
+
+
+
+
+# 6) Select the products whose productline starts from M.
+
+
+
+ SELECT * FROM  products WHERE productName LIKE 'M%';
+
+# But no products are displayed because every producName starts with integers.
+
+
+
+# 7) List out the orders whose status is cancelled.
+
+
+
+SELECT * FROM orders WHERE status = 'cancelled';
+
+
+
+
+
+# 8) Find out the orders made by the customer 'La Rochelle Gifts'
+
+
+
+SELECT customerNumber FROM customers WHERE customerName = 'La Rochelle Gifts';  
+
+# To get customerNumber.
+
+
+
+SELECT * FROM orders WHERE customerNumber = 119;
+
+# customerName is not mentioned, so customerNumber is used.
+
+
+
+
+
+# 9) Find the total amount of payment of each customer.
+
+
+
+SELECT customerNumber, sum(amount) as total_amount FROM payments GROUP BY customerNumber;
+
+
+
+
+
+# 10) List out the phonenumber and address of the offices located in USA
+
+
+
+SELECT phone, addressLine1, addressLine2 FROM offices WHERE country = 'USA';
+

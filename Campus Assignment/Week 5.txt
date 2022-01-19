@@ -1,0 +1,107 @@
+
+/*
+
+First 
+
+▪ Create the database called Softed 
+
+▪ Select the created Database 
+
+*/
+
+
+
+CREATE DATABASE Softed;
+
+
+
+USE Softed;
+
+
+
+CREATE TABLE tbl_department(
+
+    dept_no INT AUTO_INCREMENT,
+
+    department_name VARCHAR(50) NOT NULL,
+
+    location VARCHAR(40) NOT NULL,
+
+    
+
+    CONSTRAINT primaryKey PRIMARY KEY(dept_no)
+
+);
+
+
+
+INSERT INTO tbl_department(department_name, location) VALUES ('packing', 'cairo');
+
+INSERT INTO tbl_department(department_name, location) VALUES ('accounts', 'lagos');
+
+INSERT INTO tbl_department(department_name, location) VALUES ('human resource', 'london');
+
+
+
+SELECT * FROM tbl_department;
+
+
+
+
+
+
+
+
+
+# Now Secondly, Create another table tbl_employee and insert given data with appropriate Datatype 
+
+
+
+
+
+
+
+CREATE TABLE tbl_employee(
+
+    emp_no INT AUTO_INCREMENT,
+
+    first_name VARCHAR(50) NOT NULL,
+
+    last_name VARCHAR(50) NOT NULL,
+
+    job_title VARCHAR(40) NOT NULL,
+
+    age INT,
+
+    dept_no INT,
+
+    
+
+    CONSTRAINT primaryKey PRIMARY KEY(emp_no),
+
+    CONSTRAINT foreignKey FOREIGN KEY(dept_no) REFERENCES tbl_department(dept_no)
+
+);
+
+
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Lawrence','Surani','Manager',56,1);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Jason','Argo','Manager',33,2);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Emily','Villa','Manager',32,3);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Ahemed','Mukani','Packer',23,1);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Joe','Todj','Packer',24,1);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Hattie','Smith','Accountant',56,2);
+
+INSERT INTO tbl_employee(first_name, last_name, job_title, age, dept_no) VALUES ('Sally','Boorman','Admin Assistant',34,3);
+
+
+
+
+
+SELECT * FROM tbl_employee;
+

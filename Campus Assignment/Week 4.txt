@@ -1,0 +1,94 @@
+
+CREATE TABLE module(
+
+    Mcode varchar(25),
+
+    Mname varchar(100) not null,
+
+    Mcredit int,
+
+    constraint pk_module primary key(mcode)
+
+);
+
+
+
+
+
+INSERT INTO module VALUES ('SWT104', 'Enterprise system', 20); 
+
+INSERT INTO module VALUES ('SWT105', 'Database', 10); 
+
+INSERT INTO module VALUES ('SWT106', 'Python', 15); 
+
+INSERT INTO module VALUES ('SWT107', 'Logic and Sets', 10); 
+
+INSERT INTO module VALUES ('SWT108', 'Android', 20); 
+
+
+
+SELECT * FROM module;
+
+
+
+INSERT INTO module VALUES ('SWT104', 'Web Development', 20); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE Category_Table(
+
+    CategoryID INT PRIMARY KEY AUTO_INCREMENT,
+
+    CategoryName VARCHAR(50) NOT NULL
+
+);
+
+
+
+
+
+CREATE TABLE Product_Table(
+
+    
+
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+
+    ProductName VARCHAR(50) NOT NULL,
+
+    CategoryID INT, 
+
+    FOREIGN KEY (CategoryID) REFERENCES Category_Table(CategoryID),
+
+    rate INT,
+
+    stockquantity INT,
+
+    CONSTRAINT CHK_srock CHECK (stockquantity > 10),
+
+    color VARCHAR(10) ,
+
+    CHECK (color = 'Red' OR color = 'Green'  OR color = 'Blue'),
+
+    SellingType VARCHAR(10) DEFAULT 'Regular',
+
+    SKU VARCHAR(20), 
+
+    CONSTRAINT Uc_SKU UNIQUE(SKU)
+
+);

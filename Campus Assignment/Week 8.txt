@@ -1,0 +1,139 @@
+
+
+# 1. Insert 5 new records in the table OFFICES and PRODUCTLINES.
+
+
+
+INSERT INTO OFFICES(officeCode, city, phone, addressLine1, addressLine2, state, country, postalCode, territory)
+
+VALUES
+
+(9, 'Kathmandu', '+977 123456', 'Dillibazar', 'Bagmati', '3', 'Nepal', '12345', 'Nepal'),
+
+(10, 'Pokhara', '+977 8654323', 'Lake Side', 'Karnali', '3', 'Nepal', '3455', 'Nepal'),
+
+(11, 'Manang', '+977 6456324', 'Chiya bari', 'Kaski', '3', 'Nepal', '2345', 'Nepal'),
+
+(12, 'Mumbai', '+933 134143', 'Hydrabad', 'UP', '7', 'India', '56445', 'India'),
+
+(13, 'New York', '+1 2432 34 324', 'State Avenue', 'Central Park', '1', 'USA', '56445', 'USA');
+
+
+
+SELECT * FROM OFFICES;
+
+
+
+INSERT INTO PRODUCTLINES(productLine, textDescription) VALUES 
+
+('Single Gear Cycle', 'The cheapest cycle there is.'),
+
+('MTB', 'Perfect for Mountaneous region.'),
+
+('Road Bike', 'For daily commute in nice road.'),
+
+('City Cycle', 'For daily commute in the city.'),
+
+('BMX', 'For stunts.');
+
+
+
+SELECT * FROM PRODUCTLINES;
+
+
+
+
+
+
+
+# 2. Change the country France to Germany in the table OFFICES.
+
+
+
+SELECT * FROM OFFICES;
+
+UPDATE OFFICES SET country = 'Germany' where country = 'France';
+
+
+
+
+
+
+
+# 3. Delete the orderdetails of orderid 10101
+
+
+
+SELECT * FROM orderdetails;
+
+DELETE FROM orderdetails WHERE orderNumber = 10101; 
+
+
+
+
+
+
+
+# 4. Create a new table CATEGORY with the following column:
+
+ #   categoryid int, categoryname varchar(20)
+
+
+
+CREATE TABLE CATEGORY(
+
+    categoryid INT,
+
+    categoryname VARCHAR(20)
+
+);
+
+
+
+
+
+# 5. Add a new column CATEGORYDESCRIPTION and PICTURE in category table
+
+
+
+SELECT * FROM CATEGORY;
+
+ALTER TABLE CATEGORY ADD CATEGORYDESCRIPTION VARCHAR(100), ADD PICTURE VARCHAR(60);
+
+
+
+
+
+
+
+# 6. Change the column name of  CATEGORYDESCRIPTION to CATDESCRIPTION   
+
+
+
+SELECT * FROM CATEGORY;
+
+ALTER TABLE CATEGORY RENAME COLUMN CATEGORYDESCRIPTION TO CATDESCRIPTION;
+
+
+
+
+
+
+
+# 7. Remove the column PICTURE from CATEGORY table
+
+
+
+SELECT * FROM CATEGORY;
+
+ALTER TABLE CATEGORY DROP PICTURE;
+
+
+
+# 8. Add primary key to the table CATEGORY
+
+
+
+SELECT * FROM CATEGORY;
+
+ALTER TABLE CATEGORY ADD PRIMARY KEY(categoryid);
